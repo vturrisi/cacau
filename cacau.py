@@ -40,7 +40,7 @@ def prepare_data(dir_, data_transforms, batch_size=8, shuffle=True, num_workers=
     from collections import namedtuple
 
     DataWithInfo = namedtuple('DataWithInfo', ['dataloaders', 'sizes',
-                                           'class_names', 'n_classes'])
+                                               'class_names', 'n_classes'])
 
     image_datasets = {x: datasets.ImageFolder(os.path.join(dir_, x),
                                               data_transforms[x])
