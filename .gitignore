@@ -1,6 +1,8 @@
 imgs/*
 CAM/*
 model.bin
+model_50.bin
+model_all_layers.bin
 
 # Created by https://www.gitignore.io/api/python,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,visualstudiocode
