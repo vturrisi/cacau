@@ -71,13 +71,6 @@ class ResnetWithCAM(nn.Module):
         output = self.fc_layer(output)
         return output
 
-    def get_activations(self, img, label):
-        activation_maps = self.activations(img).detach()
-        weights = self.fc_layer.weight[label].detach()
-        activation_maps = activation_maps * weights.view(1, -1, 1, 1)
-
-        exit()
-
 
 def train_model(device, model, criterion, optimiser, epochs, model_name='model.bin'):
     since = time.time()
@@ -179,4 +172,4 @@ criterion = nn.CrossEntropyLoss()
 optimiser = optim.Adam(model.fc_layer.parameters(), lr=0.01)
 
 model_ft = train_model(device, model, criterion, optimiser,
-                       epochs=200, model_name='model.bin')
+                       epochs=500, model_name='model.bin')
